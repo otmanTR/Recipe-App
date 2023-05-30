@@ -402,3 +402,176 @@ Processing by HomeController#index as TURBO_STREAM
 Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 2783)
 
 
+Started GET "/" for 127.0.0.1 at 2023-05-29 19:30:19 +0300
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 18.6ms | Allocations: 2388)
+Completed 200 OK in 21ms (Views: 19.8ms | Allocations: 2707)
+
+
+Started GET "/users" for 127.0.0.1 at 2023-05-29 19:30:24 +0300
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb
+  Rendered users/index.html.erb (Duration: 0.1ms | Allocations: 7)
+Completed 200 OK in 3ms (Views: 1.6ms | Allocations: 343)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-05-29 19:30:30 +0300
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 56ms (ActiveRecord: 26.0ms | Allocations: 4600)
+
+
+Started GET "/" for 127.0.0.1 at 2023-05-29 19:30:30 +0300
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 2397)
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.0ms | Allocations: 2719)
+
+
+Started GET "/users" for 127.0.0.1 at 2023-05-29 19:30:38 +0300
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb
+  Rendered users/index.html.erb (Duration: 0.1ms | Allocations: 7)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms | Allocations: 345)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2023-05-29 19:31:27 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"sign_out"}
+  Rendering users/show.html.erb
+  Rendered users/show.html.erb (Duration: 0.1ms | Allocations: 7)
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.0ms | Allocations: 345)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2023-05-29 19:31:30 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"sign_out"}
+  Rendering users/show.html.erb
+  Rendered users/show.html.erb (Duration: 0.1ms | Allocations: 7)
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.0ms | Allocations: 345)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-05-29 19:31:34 +0300
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 8ms (ActiveRecord: 1.7ms | Allocations: 1334)
+
+
+Started GET "/" for 127.0.0.1 at 2023-05-29 19:31:34 +0300
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 18.2ms | Allocations: 2395)
+Completed 200 OK in 21ms (Views: 19.8ms | ActiveRecord: 0.0ms | Allocations: 2717)
+
+
+Started GET "/" for 127.0.0.1 at 2023-05-29 19:32:16 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 450)
+  Rendered layout layouts/application.html.erb (Duration: 171.6ms | Allocations: 35223)
+Completed 200 OK in 213ms (Views: 180.3ms | ActiveRecord: 0.0ms | Allocations: 43527)
+
+
+Started GET "/users" for 127.0.0.1 at 2023-05-29 19:32:25 +0300
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb
+  Rendered users/index.html.erb (Duration: 4.8ms | Allocations: 135)
+Completed 200 OK in 10ms (Views: 8.2ms | ActiveRecord: 0.0ms | Allocations: 1329)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-05-29 19:32:31 +0300
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 86ms (ActiveRecord: 13.0ms | Allocations: 23377)
+
+
+Started GET "/" for 127.0.0.1 at 2023-05-29 19:32:31 +0300
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 9)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 2573)
+Completed 200 OK in 12ms (Views: 10.3ms | ActiveRecord: 0.0ms | Allocations: 2945)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-05-29 19:32:39 +0300
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 0.3ms | Allocations: 1470)
+
+
+Started GET "/" for 127.0.0.1 at 2023-05-29 19:32:39 +0300
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 2372)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.0ms | Allocations: 2695)
+
+
+Started GET "/users" for 127.0.0.1 at 2023-05-29 19:34:10 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb
+  Rendered users/index.html.erb (Duration: 3.0ms | Allocations: 454)
+Completed 200 OK in 30ms (Views: 11.3ms | ActiveRecord: 0.0ms | Allocations: 6572)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2023-05-29 19:34:20 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"sign_out"}
+  Rendering users/show.html.erb
+  Rendered users/show.html.erb (Duration: 1.4ms | Allocations: 129)
+Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 0.0ms | Allocations: 608)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2023-05-29 19:34:23 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"sign_out"}
+  Rendering users/show.html.erb
+  Rendered users/show.html.erb (Duration: 0.1ms | Allocations: 8)
+Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 0.0ms | Allocations: 350)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2023-05-29 19:34:28 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"sign_out"}
+  Rendering users/show.html.erb
+  Rendered users/show.html.erb (Duration: 0.1ms | Allocations: 8)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 350)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2023-05-29 19:34:30 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"sign_out"}
+  Rendering users/show.html.erb
+  Rendered users/show.html.erb (Duration: 0.1ms | Allocations: 8)
+Completed 200 OK in 5ms (Views: 2.1ms | ActiveRecord: 0.0ms | Allocations: 350)
+
+
+Started GET "/" for 127.0.0.1 at 2023-05-29 19:34:53 +0300
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 133)
+  Rendered layout layouts/application.html.erb (Duration: 134.7ms | Allocations: 34684)
+Completed 200 OK in 158ms (Views: 142.1ms | ActiveRecord: 0.0ms | Allocations: 38088)
+
+
