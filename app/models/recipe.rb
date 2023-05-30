@@ -6,4 +6,5 @@ class Recipe < ApplicationRecord
   
     has_many :recipe_food, foreign_key: :user_id
   
+
   end
