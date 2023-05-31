@@ -1,11 +1,8 @@
-# frozen_string_literal: true
-
 class Ability
   include CanCan::Ability
 
   def initialize(user)
-   
-    user ||= User.new 
+    user ||= User.new
 
     can :manage, Recipe, user_id: user.id
 
@@ -14,6 +11,5 @@ class Ability
     else
       can :read, :all
     end
-
   end
 end
