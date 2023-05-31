@@ -1,6 +1,6 @@
 class FoodsController < ApplicationController
   def index
-    @user = User.find(params[:user_id])
+    @user = User.find(current_user.id)
     @foods = @user.foods
   end
 
@@ -14,7 +14,7 @@ class FoodsController < ApplicationController
 
     if @food.save
       flash[:success] = 'Food created successfully.'
-      redirect_to "/users/#{current_user.id}/foods"
+      redirect_to '/foods'
     else
       flash[:danger] = 'Food could not be created.'
       render :new

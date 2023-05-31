@@ -1,6 +1,6 @@
 <h1>Create new food</h1>
 
-<%= form_with model: @food, url: user_foods_path(current_user) do |form| %>
+<%= form_with model: @food, url: foods_path(current_user) do |form| %>
     <div>
       <%= form.label :name%><br>
       <%= form.text_field :name, placeholder: 'Enter food name', required: true %>
