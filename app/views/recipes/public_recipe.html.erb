@@ -8,7 +8,10 @@
             <h1>By: <%= recipe.user.name %></h1>
             
         </div>
-        
+        <div>
+            <h1>Total Food of item: <%= recipe.recipe_foods.count %></h1>
+            <h1>Total Price: <%= recipe.recipe_foods.sum { |recipe_food| recipe_food.food.price } %></h1>
+        </div>   
     </div>
 
     <% end %>

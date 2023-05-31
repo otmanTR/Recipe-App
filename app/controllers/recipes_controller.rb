@@ -1,26 +1,34 @@
 class RecipesController < ApplicationController
+  before_action :authenticate_user!, except: %i[public_recipe index]
+  load_and_authorize_resource
+
   def index
-    @user = current_user
+    @user = User.find(current_user.id)
     @recipes = @user.recipes
   end
 
   def show
     @recipe = Recipe.find(params[:id])
+    return unless @recipe.public && @recipe.user != current_user
+
+    redirect_to recipes_path, alert: 'You are not authorized to view this recipe.'
+  end
+
+  def public_recipe
+    @recipes = Recipe.where(public: true)
   end
 
   def new
-    @recipe = Recipe.new
+    @recipe = current_user.recipes.build
+    @foods = Food.all
   end
 
   def create
-    @recipe = current_user.recipes.new(recipe_params)
-    @recipe.user = current_user
-
+    @recipe = current_user.recipes.build(recipe_params)
     if @recipe.save
-
-      redirect_to recipe_path(@recipe.id), notice: 'Recipe created successfully!'
+      redirect_to recipe_path(@recipe.id)
     else
-      render :new
+      render 'new'
     end
   end
 
@@ -30,13 +38,10 @@ class RecipesController < ApplicationController
     redirect_to recipes_path
   end
 
-  def public_recipe
-    @recipes = Recipe.where(public: true)
-  end
-
   private
 
   def recipe_params
-    params.require(:recipe).permit(:name, :preperation_time, :cooking_time, :description, :public)
+    params.require(:recipe).permit(:name, :description, :preparation_time, :cooking_time, :public,
+                                   recipe_foods_attributes: %i[id food_id quantity _destroy])
   end
 end
