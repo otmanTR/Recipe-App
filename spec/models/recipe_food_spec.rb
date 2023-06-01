@@ -52,7 +52,7 @@ RSpec.describe RecipeFood, type: :model do
   describe 'View' do
 
     it 'should have a description' do
-        expect(recipe.description).to eq('Recipe Description')
+        expect(recipe.description).to eq('Description')
       end
 
     it 'should have a name' do
