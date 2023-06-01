@@ -5,9 +5,9 @@ RSpec.describe 'Foods', type: :request do
 
   describe 'GET /index' do
     before(:each) do
-      @user = User.create(name: 'Mark', email: 'marcos@gmail.com', password: 'abcdef')
+      @user = User.create(name: 'Hana', email: 'hana@gmail.com', password: 'abcdef')
       sign_in @user
-      @food = Food.create(name: 'Pilau', measurement_unit: 'grams', price: 120, quantity: 800, user_id: @user.id)
+      @food = Food.create(name: 'Meal', measurement_unit: 'grams', price: 120, quantity: 800, user_id: @user.id)
     end
 
     it 'returns http success' do

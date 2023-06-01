@@ -71,6 +71,8 @@ group :development do
   # gem "spring"
 end
 
+gem 'rails-controller-testing'
+
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
