@@ -1,4 +1,4 @@
-<%= stylesheet_link_tag 'recipes/index', media: 'all' %>
+<%= render 'shared/navbar' %>
 
 <div class='recipe_container'>
     <h1>Recipes</h1>
@@ -16,8 +16,6 @@
     
     <div class='recipe_add'>
         <h2><%= link_to 'Add new Recipe', new_recipe_path, class:'recipe_add_btn' %></h2>
-        <h2> <%= link_to 'Public Recipes', public_recipes_path, class:'recipe_add_btn' %></h2>
-        <h2> <%= link_to 'Home', root_path, class:'recipe_add_btn' %></h2>
     </div>
 
    

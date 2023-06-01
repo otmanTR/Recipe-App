@@ -1,3 +1,5 @@
+<%= render 'shared/navbar' %>
+
 <h1>Public Recipes</h1>
 
 <% @recipes.each do |recipe| %>
@@ -17,6 +19,3 @@
     <% end %>
     
   <% end %>
-
-<h1> <%= link_to 'Back', recipes_path, class:'recipe_add_btn' %></h1>
-<h1> <%= link_to 'Home', root_path, class:'recipe_add_btn' %></h1>
