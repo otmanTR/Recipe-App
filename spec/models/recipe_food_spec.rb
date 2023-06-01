@@ -21,21 +21,19 @@ RSpec.describe RecipeFood, type: :model do
   before { recipe_food.save }
 
   describe 'Validations' do
-
     it 'is not valid without a food_id' do
-        recipe_food.food_id = nil
-        expect(recipe_food).to_not be_valid
-      end
+      recipe_food.food_id = nil
+      expect(recipe_food).to_not be_valid
+    end
     it 'is not valid without a recipe_id' do
       recipe_food.recipe_id = nil
       expect(recipe_food).to_not be_valid
     end
 
-
     it 'is not valid with a recipe_id that does not exist' do
-        recipe_food.recipe_id = 0
-        expect(recipe_food).to_not be_valid
-      end
+      recipe_food.recipe_id = 0
+      expect(recipe_food).to_not be_valid
+    end
     it 'is not valid with a recipe_id less than 0' do
       recipe_food.recipe_id = -1
       expect(recipe_food).to_not be_valid
@@ -45,24 +43,20 @@ RSpec.describe RecipeFood, type: :model do
       recipe_food.food_id = -1
       expect(recipe_food).to_not be_valid
     end
-
-   
   end
 
   describe 'View' do
-
     it 'should have a description' do
-        expect(recipe.description).to eq('Description')
-      end
+      expect(recipe.description).to eq('Description')
+    end
 
     it 'should have a name' do
       expect(recipe.name).to eq('Recipe Name')
     end
 
-
     it 'should have a recipe_id' do
-        expect(recipe_food.recipe_id).to eq(recipe.id)
-      end
+      expect(recipe_food.recipe_id).to eq(recipe.id)
+    end
     it 'should have a public' do
       expect(recipe.public).to eq(true)
     end
@@ -70,7 +64,5 @@ RSpec.describe RecipeFood, type: :model do
     it 'should have quantity' do
       expect(recipe_food.quantity).to eq(1)
     end
-
-   
   end
 end

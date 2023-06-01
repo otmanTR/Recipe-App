@@ -14,7 +14,6 @@ RSpec.describe 'RecipeFoods', type: :request do
   end
 
   describe 'GET /new' do
-  
     it 'returns http success' do
       expect(response).to have_http_status(:success)
     end
@@ -27,5 +26,4 @@ RSpec.describe 'RecipeFoods', type: :request do
       expect(response.body).to include('Create new Recipe Food')
     end
   end
-  
 end

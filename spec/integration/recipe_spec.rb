@@ -15,10 +15,9 @@ RSpec.describe 'Recipes', type: :request do
   end
 
   describe 'GET /index' do
-
     it 'response contains the correct content' do
-        expect(response.body).to include('Recipes')
-      end
+      expect(response.body).to include('Recipes')
+    end
 
     it 'returns http success' do
       get recipes_path
@@ -28,6 +27,5 @@ RSpec.describe 'Recipes', type: :request do
     it 'response is rendered with the correct template' do
       expect(response).to render_template('index')
     end
-    
   end
 end
