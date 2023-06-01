@@ -1,0 +1,24 @@
+<%= render 'shared/navbar' %>
+<section class="main_section food_page">
+  <div>
+    <button class="food_btn"><%= link_to 'Add Food', new_food_path, class: "food_link" %></button>
+  </div>
+  <ul class="food_list">
+    <li class="food_item">
+      <p>Name</p>
+      <p>Measurement Unit</p>
+      <p>Unit Price</p>
+      <p>Actions</p>
+    </li>
+    <% @foods.each_with_index do |food, index| %>
+        <li class="food_item">
+          <p><%= food.name %></p>
+          <p><%= food.measurement_unit %></p>
+          <p><%= food.price %></p>
+          <%= link_to "Delete", food_path(food.id), data: {
+            turbo_method: :delete
+          } %>
+        </li>
+    <% end %>
+  </ul>
+</section>

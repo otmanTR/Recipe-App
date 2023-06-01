@@ -1,0 +1,27 @@
+<section class="main_section">
+<h1>Create new food</h1>
+
+<%= form_with model: @food, url: foods_path(current_user) do |form| %>
+    <div class="field_form">
+      <%= form.label :name%><br>
+      <%= form.text_field :name, placeholder: 'Enter food name', required: true, class: "input" %>
+    </div>
+
+    <div class="field_form">
+      <%= form.label :measurement_unit%><br>
+      <%= form.text_field :measurement_unit, placeholder: 'Enter unit', required: true, class: "input" %>
+    </div>
+
+    <div class="field_form">
+      <%= form.label :price%><br>
+      <%= form.text_field :price, placeholder: 'Price', required: true, class: "input" %>
+    </div>
+
+    <div class="field_form">
+      <%= form.label :quantity%><br>
+      <%= form.number_field :quantity, min: 0, placeholder: 'Quantity', required: true, class: "input" %>
+    </div>
+
+    <%= form.submit class: "btn" %>
+<% end %>
+</section>

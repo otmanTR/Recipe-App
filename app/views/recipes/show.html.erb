@@ -1,0 +1,54 @@
+<%= render 'shared/navbar' %>
+
+<div class='recipe_info'>
+<h1 class= 'recipe_name_list'><%=@recipe.name%></h1>
+
+<div class='recipe_pre_pub'>
+<h2>Preparation_time: <%=@recipe.preparation_time%></h2>
+<%= form_with(model: @recipe, local: true) do |form| %>
+  <div class="form-group">
+    <%= form.label :public %>
+    <div class="toggle-switch">
+      <%= form.check_box :public, class: "toggle-checkbox", id: "public-toggle" %>
+      <label for="public-toggle" class="toggle-label"></label>
+    </div>
+  </div>
+<% end %>
+</div>
+
+<h2>Cooking_time: <%= @recipe.cooking_time%></h2>
+
+<h2> Steps go here...</h2>
+
+<div class='recipe_gen_add_ing'>
+<button><%=link_to 'Generate Shopping List', recipe_shopping_lists_path(@recipe), class:'btn_recipe' %></button>
+<button><%=link_to 'Add Ingredients', new_recipe_recipe_food_path(@recipe), class:'btn_recipe' %></button>
+</div>
+<hr>
+
+<table>
+  <thead>
+    <tr>
+      <th>Food</th>
+      <th>Quantity</th>
+      <th>Value</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @recipe.recipe_foods.each do |ingredient| %>
+      <tr>
+        <td><%= ingredient.food.name %></td>
+        <td><%= ingredient.quantity %></td>
+        <td><%= ingredient.food.price %></td>
+        <td><%= link_to 'Modify ', edit_recipe_recipe_food_path(@recipe, ingredient), class:'td-btn' %> <%= link_to '   Remove', recipe_recipe_food_path(@recipe, ingredient), data: {turbo_method: :delete, turbo_confirm: "Are you sure?" }, class:'td-btn' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+  
+
+<h2><%=link_to 'Back', recipes_path%></h2>
+
+</div>
